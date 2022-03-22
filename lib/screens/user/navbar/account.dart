@@ -315,29 +315,52 @@ class _AccountUserState extends State<AccountUser> {
                 ),
               ),
             )
-          : GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => EditPhotoProfileUser(),
-                  ),
-                );
-              },
-              child: Card(
-                shadowColor: Colors.red,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(100),
+          : Stack(
+              children: [
+                Container(
+                  width: 180,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EditPhotoProfileUser(),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      shadowColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(100),
+                        ),
+                      ),
+                      child: ClipOval(
+                        child: Image.network(
+                          userModel.imageProfile,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-                child: ClipOval(
-                  child: Image.network(
-                    userModel.imageProfile,
-                    fit: BoxFit.cover,
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: ClipOval(
+                    child: Container(
+                      color: Colors.white,
+                      width: 35,
+                      height: 35,
+                      child: Icon(
+                        Icons.edit,
+                        color: Colors.redAccent,
+                        size: 30,
+                      ),
+                    ),
                   ),
-                ),
-              ),
+                )
+              ],
             ),
     );
   }

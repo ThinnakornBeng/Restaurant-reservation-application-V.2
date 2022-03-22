@@ -1,8 +1,8 @@
 import 'package:b_queue/model/detail_notification_model.dart';
 import 'package:b_queue/model/queue_model.dart';
 import 'package:b_queue/model/user_model.dart';
-import 'package:b_queue/screens/restaurant/buttonNavBar/listQueueForRestaurant.dart';
 import 'package:b_queue/screens/restaurant/navbar/navRest.dart';
+import 'package:b_queue/screens/restaurant/screens/servide_history.dart';
 import 'package:b_queue/utility/style.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
@@ -28,6 +28,9 @@ class _DetailQueueForRrstState extends State<DetailQueueForRrst> {
   var waitStatus = true;
   var body;
   var title;
+  var dateNow = DateTime.now();
+  var datimeCalculator;
+  var a, b, c, d;
 
   @override
   void initState() {
@@ -36,7 +39,45 @@ class _DetailQueueForRrstState extends State<DetailQueueForRrst> {
     queueModel = widget.queueModel;
     uidQueue = widget.uidQueue;
 
-    print('UidQueue ==>> $uidQueue');
+    // print('UidQueue ==>> $dateNow');
+    // print(queueModel.time.toDate());
+    calculatorDateTime();
+    // setDateTimeToInt();
+  }
+
+  Future<void> setDateTimeToInt() {
+    DateFormat timeFormat = new DateFormat.Hm();
+    a = timeFormat.format(datimeCalculator);
+    b = timeFormat.format(dateNow);
+    c = int.parse(a);
+    d = int.parse(b);
+
+    calculatorDateTime();
+  }
+
+  Future<void> calculatorDateTime() {
+    DateFormat timeFormat = new DateFormat.Hm();
+
+    if (queueModel != null) {
+      if (queueModel.time.toDate() != dateNow) {
+        datimeCalculator = queueModel.time.toDate().add(Duration(minutes: 1));
+        print("Time QueueModel is ${queueModel.time.toDate()}");
+        print("New time QueueModel is $datimeCalculator");
+        a = timeFormat.format(datimeCalculator);
+        b = timeFormat.format(dateNow);
+        // print("DateTimeNow Is $dateNow");
+        // print("DateTime QueueModel Add is $calculatorDateTime()");
+        // var a = int.parse(datimeCalculator);
+        if (a == b) {
+          updateWaitStatus();
+          print("Update success");
+        } else {
+          print('is not up date');
+        }
+      }
+    } else {
+      print('null');
+    }
   }
 
   @override
@@ -257,6 +298,23 @@ class _DetailQueueForRrstState extends State<DetailQueueForRrst> {
                 textAlign: TextAlign.start,
                 style: TextStyle(fontSize: 15),
               ),
+            ),
+            // Container(
+            //   height: 30,
+            //   width: MediaQuery.of(context).size.width,
+            //   color: Colors.green,
+            // ),
+            Container(
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ServiceHistory(),
+                      ),
+                    );
+                  },
+                  child: Text('ประวัติผู้ที่ไม่เข้าใช้บริการ')),
             )
           ],
         ),
@@ -289,15 +347,9 @@ class _DetailQueueForRrstState extends State<DetailQueueForRrst> {
           .collection('restaurantQueueTable')
           .doc(uidQueue)
           .update({"waitStatus": waitStatus}).then((value) {
-        print('Uddate Queue Status Success');
+        // print('Uddate Queue Status Success');
       });
     });
-    Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(
-          builder: (context) => NavigationBarRestaurant(),
-        ),
-        (route) => false);
   }
 
   Future<void> updateQueueStatus() async {

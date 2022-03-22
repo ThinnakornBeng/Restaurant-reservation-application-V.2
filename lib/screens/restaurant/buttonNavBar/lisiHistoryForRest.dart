@@ -44,6 +44,7 @@ class _ListHistoryForRestaurantState extends State<ListHistoryForRestaurant> {
             uidQueues.add(uidQueue);
           }
         });
+        
       });
     });
   }
