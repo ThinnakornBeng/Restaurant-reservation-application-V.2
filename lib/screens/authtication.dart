@@ -1,8 +1,8 @@
 import 'package:b_queue/forgotPassword.dart';
 import 'package:b_queue/model/user_model.dart';
+import 'package:b_queue/screens/chat_user_1.dart';
 import 'package:b_queue/screens/register.dart';
 import 'package:b_queue/screens/restaurant/navbar/navRest.dart';
-import 'package:b_queue/screens/user/navbar/navUser.dart';
 import 'package:b_queue/utility/colors.dart';
 import 'package:b_queue/utility/dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -98,7 +98,7 @@ class _AuthenticationState extends State<Authentication> {
                       upDateTokenRestaurant();
                       break;
                     case 'user':
-                      routeToPage(NavigationBarUser());
+                      routeToPage(ChatUser1());
                       break;
 
                     default:
@@ -362,7 +362,7 @@ class _AuthenticationState extends State<Authentication> {
                 routeToPage(NavigationBarRestaurant());
                 break;
               case 'user':
-                routeToPage(NavigationBarUser());
+                routeToPage(ChatUser1());
                 break;
               default:
             }
@@ -475,7 +475,7 @@ class _AuthenticationState extends State<Authentication> {
                 routeToPage(NavigationBarRestaurant());
                 break;
               case 'user':
-                routeToPage(NavigationBarUser());
+                routeToPage(ChatUser1());
                 break;
               default:
                 print('### Con not Type ###');

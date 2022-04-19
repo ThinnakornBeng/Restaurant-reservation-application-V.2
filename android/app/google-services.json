@@ -8,81 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:244848178670:android:092cab538820f2733ecaff",
-        "android_client_info": {
-          "package_name": "com.example.flutter_application_beng_queue_app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "244848178670-3465nuo48rkubefc3aj83hg5e23sd3ak.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.flutter_application_beng_queue_app",
-            "certificate_hash": "fc1da104ef1c5371d24565c149fc1c3b6f0c18af"
-          }
-        },
-        {
-          "client_id": "244848178670-e5v33up81dd1kicpsa1g1b1ujfehevtg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.flutter_application_beng_queue_app",
-            "certificate_hash": "66d0ad9d489bd037b53431cb023a30d6eed9b29f"
-          }
-        },
-        {
-          "client_id": "244848178670-utgjbkq4nnk1uu2ch9n9m4d4k4u2tqo0.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.flutter_application_beng_queue_app",
-            "certificate_hash": "ced0efd0974d28f889097e4791ae8ed3fc3f4d26"
-          }
-        },
-        {
-          "client_id": "244848178670-hmsvt8dbffjjgpdus41sfahcvdq543s6.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyANQDtIPg44SahaXv2VUiorrxaXCfOVnys"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "244848178670-hmsvt8dbffjjgpdus41sfahcvdq543s6.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:244848178670:android:9addd439dfc657e23ecaff",
+        "mobilesdk_app_id": "1:244848178670:android:683c766cc6af2e883ecaff",
         "android_client_info": {
           "package_name": "com.flutterthailand.b_queue"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "244848178670-a6s09r16346hlikm78k36qeblh7iepj7.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.flutterthailand.b_queue",
-            "certificate_hash": "66d0ad9d489bd037b53431cb023a30d6eed9b29f"
-          }
-        },
-        {
-          "client_id": "244848178670-bhsqromipjhl2i76ljmvo8ao0avsudcv.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.flutterthailand.b_queue",
-            "certificate_hash": "fc1da104ef1c5371d24565c149fc1c3b6f0c18af"
-          }
-        },
         {
           "client_id": "244848178670-hmsvt8dbffjjgpdus41sfahcvdq543s6.apps.googleusercontent.com",
           "client_type": 3

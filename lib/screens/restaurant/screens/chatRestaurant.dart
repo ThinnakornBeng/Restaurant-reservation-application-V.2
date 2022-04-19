@@ -41,7 +41,7 @@ class _ChatroomRestaurantState extends State<ChatroomRestaurant> {
     print('Chatroom Id is $chatRoomId');
   }
 
-  void onSentMessage() async {
+  void  onSentMessage() async {
     if (msg.text.isNotEmpty) {
       Map<String, dynamic> message = {
         'sendby': restaurantModel.nameRes,
